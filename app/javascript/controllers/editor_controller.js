@@ -9,11 +9,23 @@ export default class extends Controller {
   connect() {
     //Creamos el componente aqui
     console.log('HOLA TILINES')
+
+    const initialContent = this.getInitialContent()
+
     this.contentEditor = new EditorJS({
-      holder: this.article_contentTarget
-      //Ahora con el componente creado vamos a habilitar el guardado
+      holder: this.article_contentTarget, //Ahora con el componente creado vamos a habilitar el guardado
+      data: initialContent,
+      tools: {}
     })
     this.element.addEventListener("submit", this.saveEditorData.bind(this))
+  }
+
+  getInitialContent(){
+    const hiddenContentField = document.querySelector('#article_content_hidden')
+    if (hiddenContentField && hiddenContentField.value){
+      return JSON.parse(hiddenContentField.value)
+    }
+    return {}
   }
 
   async saveEditorData(event){
