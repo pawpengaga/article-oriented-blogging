@@ -8,7 +8,7 @@ module ArticleImagesHandler
     image_blocks = filter_image_blocks(content)
 
     image_blocks.each do |image_block|
-      signed_id == extract_signed_id(image_block)
+      signed_id = extract_signed_id(image_block)
       existing_image = find_existing_image(signed_id)
 
       if existing_image.nil?
@@ -45,7 +45,7 @@ module ArticleImagesHandler
   def create_and_associate_image(signed_id)
     articleImage = ArticleImage.new(article: self)
     articleImage.image.attach(signed_id)
-    image.save
+    articleImage.save
     #El artículo tiene muchas imagenes asociadas por modelo
     article_images << articleImage
   end
@@ -54,7 +54,7 @@ module ArticleImagesHandler
     existing_image.update(article_id: id)
   end
 
-  def delete_unused_images
+  def delete_unused_images(content)
     images_to_delete = article_images.reject do |article_image|
       signed_id = article_image.image.signed_id
       content['blocks'].any? { |block| block['type'] == 'image' && block['data']['file']['url'].include?(signed_id) }

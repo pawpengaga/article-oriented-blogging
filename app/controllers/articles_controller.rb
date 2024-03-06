@@ -60,6 +60,7 @@ class ArticlesController < ApplicationController
   end
 
   def upload_image
+
     image = params[:image]
 
     if image.nil?

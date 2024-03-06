@@ -44,7 +44,7 @@ export default class extends Controller {
             endpoints: {
               byFile: `/articles/upload_image`
             },
-            aditionalRequestHeaders: {
+            additionalRequestHeaders: {
               "X-CSRF-Token": this.csrfToken()
             }
           }
