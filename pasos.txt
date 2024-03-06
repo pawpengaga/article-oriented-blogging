@@ -1,0 +1,19 @@
+1.
+Lo que hace es crear unos scaffolds
+rails g scaffold article title content:json
+
+2.
+Creamos el controlador de stimulus donde ocurrira la magia
+rails g stimulus editor
+
+3.
+Añadimos la libreria con yarn
+Cada uno de los atributos de editorjs es un pluglin
+yarn add @editorjs/editorjs @editorjs/header @editorjs/list @editorjs/paragraph @editorjs/code
+
+4.
+Ahora editamos el formulario para amarrarlo al stimulus controller
+
+5. Vamos a reemplazar campos, teniendo el cuenta el id="article_content"
+
+6. Creamos en stimulus los imports y la logica necesaria para recién crear
