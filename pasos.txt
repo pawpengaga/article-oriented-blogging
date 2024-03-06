@@ -17,3 +17,9 @@ Ahora editamos el formulario para amarrarlo al stimulus controller
 5. Vamos a reemplazar campos, teniendo el cuenta el id="article_content"
 
 6. Creamos en stimulus los imports y la logica necesaria para recién crear
+
+NO OLVIDAR:
+
+- Que aprendimos sobre esta libería de javascript
+- Que aprendimos sobre el verdadero propósito de los helpers, se usan en las vistas
+- Que planeamos usar javascript para convertir a json la respuesta de un arduino y pasársela al backend
