@@ -23,3 +23,16 @@ NO OLVIDAR:
 - Que aprendimos sobre esta libería de javascript
 - Que aprendimos sobre el verdadero propósito de los helpers, se usan en las vistas
 - Que planeamos usar javascript para convertir a json la respuesta de un arduino y pasársela al backend
+
+
+7.
+Vamos a ponerle imágenes, con el poderosísimo active_storage
+rails active_storage:install
+8. Generamos un nuevo modelo?? Como para que????
+rails g model ArticleImage article:belongs_to
+
+PODEMOS USAR LOS TOKENS QUE EXISTEN EN EL HEAD DEL HTML RENDERIZADO
+
+8. Luego de terminar la configuración en el javascript al respecto, se modifica el controlador, los métodos create y update
+
+9. Luego de crear los metodos pertinentes pasamos a los modelos

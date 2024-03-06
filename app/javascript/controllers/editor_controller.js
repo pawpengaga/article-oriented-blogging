@@ -35,6 +35,17 @@ export default class extends Controller {
             inlineToolbar: true
           }
         },
+        image: {
+          class: ImageTool,
+          config: {
+            endpoints: {
+              byFile: `/articles/upload_image`
+            },
+            aditionalRequestHeaders: {
+              "X-CSRF-Token": this.csrfToken()
+            }
+          }
+        },
         code: CodeTool
       }
     })
@@ -59,5 +70,11 @@ export default class extends Controller {
 
     hiddenInput.value = JSON.stringify(outputData)
     articleForm.submit()
+  }
+
+  //Helper que fue copypasteado por el creador que diablos XDDDD
+  csrfToken(){
+    const metaTag = document.querySelector("meta[name='csrf-token']")
+    return metaTag ? metaTag.content : ""
   }
 }
