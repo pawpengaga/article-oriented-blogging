@@ -20,6 +20,9 @@ export default class extends Controller {
     const initialContent = this.getInitialContent()
 
     this.contentEditor = new EditorJS({
+      onReady: () => {
+        new DragDrop(this.contentEditor);
+      },
       holder: this.article_contentTarget, //Ahora con el componente creado vamos a habilitar el guardado
       data: initialContent,
       tools: {

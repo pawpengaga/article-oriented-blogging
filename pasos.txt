@@ -36,3 +36,5 @@ PODEMOS USAR LOS TOKENS QUE EXISTEN EN EL HEAD DEL HTML RENDERIZADO
 8. Luego de terminar la configuración en el javascript al respecto, se modifica el controlador, los métodos create y update
 
 9. Luego de crear los metodos pertinentes pasamos a los modelos
+
+10. Agregre drag and drop funcion desde aqui https://github.com/kommitters/editorjs-drag-drop
